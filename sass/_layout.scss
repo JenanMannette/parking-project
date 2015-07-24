@@ -1,10 +1,10 @@
-body {
+body#bg {
   background: url('/images/bg.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.main {
+.main-style {
   max-width: 650px;
   margin: 0 auto;
 }

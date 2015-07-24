@@ -45,12 +45,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-body {
+body#bg {
   background: url("/images/bg.png");
   background-repeat: no-repeat;
   background-size: cover; }
 
-.main {
+.main-style {
   max-width: 650px;
   margin: 0 auto; }
 
@@ -58,15 +58,33 @@ body {
   width: 50%;
   float: left; }
 
+#map-canvas {
+  margin-top: -50px;
+  width: 100%;
+  height: 400px;
+  background-color: #CCC;
+  border: 2px solid black;
+  box-shadow: 1px 1px #FE5F55; }
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.45;
-  color: #333; }
+  color: #FE5F55; }
 
 p {
   margin-bottom: 1.3em;
-  color: white; }
+  color: #FE5F55; }
+
+.logout {
+  float: right;
+  margin-right: 40px; }
+
+.capitalize {
+  text-transform: capitalize; }
+
+.login {
+  text-align: center; }
 
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
@@ -177,31 +195,24 @@ nav a:focus {
   -moz-transform: translateY(0px);
   transform: translateY(0px); }
 
-/* a {
-  color: $red;
+a {
+  color: #FE5F55;
   text-decoration: none;
-  border-bottom: 1px solid $red;
-  transition: 300ms ease all;
-}
+  border-bottom: 2px solid #FE5F55;
+  transition: 300ms ease all; }
 
 a:hover {
-  border-bottom: 1px solid $green;
-} */
-.logout {
-  float: right;
-  margin-right: 40px; }
-
-.capitalize {
-  text-transform: capitalize; }
+  border-bottom: 2px solid #C7EFCF; }
 
 .main-header {
-  width: 100%; }
+  width: 100%;
+  height: 200px; }
 
 .main-nav {
   border: 2px solid black;
   width: 100%;
+  padding: 20px;
   background-color: rgba(5, 5, 5, 0.5);
-  padding: 25px;
   position: fixed; }
   .main-nav a {
     color: #FE5F55;
@@ -233,12 +244,3 @@ nput[type='submit'], button {
   border-radius: 3px;
   padding: 20px;
   background: white; }
-
-#map-canvas {
-  width: 500px;
-  height: 400px;
-  background-color: #CCC; }
-
-#legend {
-  background: white;
-  padding: 10px; }

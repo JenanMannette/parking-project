@@ -15,6 +15,8 @@ var passport = require('passport');
 var app = express();
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
+var index = require('./routes/index');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -68,17 +70,17 @@ passport.use(new GoogleStrategy({
 
 
 app.get('/auth/google',
-  passport.authenticate('google', { scope: 'https://www.googleapis.com/auth/plus.login' }));
+  passport.authenticate('google', { scope: 'https://www.googleapis.com/auth/plus.login'
+}));
 
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/');
-  });
+});
 
-  //need these?
-  passport.serializeUser(function(user, done) {
+passport.serializeUser(function(user, done) {
   done(null, user);
 });
 
@@ -95,7 +97,10 @@ app.use('/', routes);
 app.use('/users', users);
 app.get('/styleguide', function(req, res){
   res.render('styleguide');
-})
+});
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

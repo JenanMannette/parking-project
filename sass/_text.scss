@@ -2,12 +2,25 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.45;
-  color: #333;
+  color: $red;
 }
 
 p {
   margin-bottom: 1.3em;
-  color: white;
+  color: $red;
+}
+
+.logout {
+  float: right;
+  margin-right: 40px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.login {
+  text-align: center;
 }
 
 h1, h2, h3, h4 {
@@ -131,22 +144,13 @@ nav a:focus {
 	transform: translateY(0px);
 }
 
-/* a {
+a {
   color: $red;
   text-decoration: none;
-  border-bottom: 1px solid $red;
+  border-bottom: 2px solid $red;
   transition: 300ms ease all;
 }
 
 a:hover {
-  border-bottom: 1px solid $green;
-} */
-
-.logout {
-  float: right;
-  margin-right: 40px;
-}
-
-.capitalize {
-  text-transform: capitalize;
+  border-bottom: 2px solid $green;
 }
