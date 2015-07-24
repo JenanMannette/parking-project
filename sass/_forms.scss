@@ -1,0 +1,24 @@
+form {
+  width: 100%;
+}
+
+textarea, input[type='text'] {
+  width: 100%;
+  border: 1px solid $brown;
+  transition: 300ms ease all;
+  outline: none;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+textarea:focus, input[type='text']:focus {
+  border: 1px solid $brown;
+}
+
+textarea {
+  min-height: 250px;
+}
+
+label {
+  font-weight: bold;
+}

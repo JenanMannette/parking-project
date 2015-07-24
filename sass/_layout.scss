@@ -1,0 +1,15 @@
+body {
+  background: url('/images/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.half-col {
+  width: 50%;
+  float: left;
+}

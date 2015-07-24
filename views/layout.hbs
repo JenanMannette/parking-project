@@ -2,9 +2,27 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="https://maps.googleapis.com/maps/api/js?key=" + process.env.GMKEY></script>
+    <script src="/javascripts/main.js"></script>
   </head>
+
   <body>
-    {{{body}}}
+    <header class="main-header">
+      <nav class="cl-effect-21 main-nav">
+        {{#if user}}
+          <p class="capitalize">
+            Welcome {{user.displayName}}!
+          </p>
+          <a href="/logout" class="logout">Logout</a>
+          {{else}}
+          <p>
+            Welcome to {{title}}
+          ||
+            <a href="/auth/google">Login with Google</a>
+          </p>
+        {{/if}}
+      </nav>
+    </header>
   </body>
 </html>

@@ -1,0 +1,15 @@
+.main-header {
+  width: 100%;
+}
+
+.main-nav {
+  border: 2px solid black;
+  width: 100%;
+  background-color: rgba(5,5,5,.5);
+  padding: 25px;
+  position: fixed;
+  a {
+    color: $red;
+    border-bottom: none;
+  }
+}
