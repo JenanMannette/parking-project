@@ -1,3 +1,7 @@
+*, :before, :after {
+  box-sizing: border-box;
+}
+
 body#bg {
   background: url('/images/bg.png');
   background-repeat: no-repeat;

@@ -60,15 +60,6 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-// app.get('/', function(req, res){
-//   res.render('index', { user: req.user });
-// });
-//
-// app.get('/login', function(req, res){
-//   res.render('login', { user: req.user });
-// });
-
-
 app.get('/auth/google',
   passport.authenticate('google', { scope: 'https://www.googleapis.com/auth/plus.login'
 }));
@@ -77,7 +68,7 @@ app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/');
+    res.redirect('/index');
 });
 
 passport.serializeUser(function(user, done) {
@@ -98,7 +89,6 @@ app.use('/users', users);
 app.get('/styleguide', function(req, res){
   res.render('styleguide');
 });
-
 
 
 
