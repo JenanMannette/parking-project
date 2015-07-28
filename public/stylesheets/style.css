@@ -61,6 +61,17 @@ body#bg {
   width: 50%;
   float: left; }
 
+@media screen and (min-width: 600px) {
+  .nav li, input[type="button"] {
+    width: 120px;
+    height: 50px;
+    line-height: 50px; }
+  /* Option 1 - Display Inline */
+  .nav li, input[type="button"] {
+    width: 220px;
+    display: inline-block;
+    margin-right: -10px; } }
+
 #map-canvas {
   margin-top: -65px;
   width: 100%;
@@ -84,49 +95,43 @@ body#bg {
   display: block;
   transition: .3s background-color; }
 
-.nav a:hover {
+.nav a:hover, input[type='button']:hover {
   background-color: #005f5f; }
 
-@media screen and (min-width: 600px) {
-  .nav li {
-    width: 120px;
-    height: 50px;
-    line-height: 50px; }
-  /* Option 1 - Display Inline */
-  .nav li {
-    width: 220px;
-    display: inline-block;
-    margin-right: -10px; } }
+input[type='button'] {
+  transition: .3s background-color;
+  background: black;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  width: 220px;
+  height: 50px;
+  border-left: 1px solid white;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  font-size: 20px; }
 
-/* .nav {
-  background: rgba(5,5,5,.5);
-  width: 100%;
-  margin: 0 auto;
-}
+.location-div {
+  width: 90%;
+  height: 500px;
+  padding: 10px;
+  margin: 20px auto;
+  border: 1px solid black;
+  background: rgba(46, 232, 23, 0.7);
+  display: none;
+  cursor: pointer; }
 
-#menu ul li {
-  display: inline-block;
-float: left;
-}
+.favorites-div {
+  width: 90%;
+  height: 500px;
+  padding: 10px;
+  margin: 20px auto;
+  border: 1px solid black;
+  background: rgba(250, 248, 105, 0.7);
+  display: none;
+  cursor: pointer; }
 
-background color set to RGBA, with opacity on 0.3 and also using text-shadow
-#menu ul li a {
-  padding: 20px;
-  background: rgba(5,5,5, 0.8);
-  text-decoration: none;
-}
-
-hover state shows a linear gradient and opacity it brought down to 0.9 and also shows a very slight grey gradient on top
-#menu ul li a:hover {
-background: -webkit-linear-gradient(bottom right, rgb(159,237,112) 0%, rgb(94,83,73) 72%);
-background: -o-linear-gradient(bottom right, rgb(159,237,112) 0%, rgb(94,83,73) 72%);
-background: linear-gradient(to top left, rgb(159,237,112) 0%, rgb(94,83,73) 72%);
-  background-color:rgb(94,83,73);
-  -moz-opacity:.90;
-  filter:alpha(opacity=90);
-  opacity:.90;
-}
- */
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -141,8 +146,8 @@ p {
   float: right;
   margin-right: 40px; }
 
-.capitalize {
-  text-transform: capitalize; }
+.uppercase {
+  text-transform: uppercase; }
 
 .login {
   text-align: center; }
@@ -279,6 +284,42 @@ a:hover {
     color: #FE5F55;
     border-bottom: none; }
 
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none; }
+
+.modalDialog:target {
+  opacity: 1;
+  pointer-events: auto; }
+
+.modalDialog div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 15px;
+  border-radius: 10px;
+  background: #C7EFCF;
+  border: 1px solid black; }
+
+.modalInfo {
+  border: 1px solid black;
+  margin-left: -10px; }
+
+.close {
+  line-height: 25px;
+  position: absolute;
+  right: 15px; }
+
 form {
   width: 100%; }
 
@@ -298,6 +339,9 @@ textarea {
 
 label {
   font-weight: bold; }
+
+input .address {
+  margin-bottom: 10px; }
 
 nput[type='submit'], button {
   border: 1px solid #FE5F55;

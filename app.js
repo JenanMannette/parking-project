@@ -7,6 +7,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var cookieSession = require('cookie-session');
 var bodyParser = require('body-parser');
+var db = require('monk')(process.env.MONGOLAB_URI);
+var locations = db.get('locations');
+var User = db.get('users')
+var unirest = require('unirest');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -33,7 +37,7 @@ app.use(cookieSession({
 }));
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -71,6 +75,7 @@ app.get('/auth/google/callback',
     res.redirect('/index');
 });
 
+
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
@@ -86,11 +91,22 @@ app.use(function (req, res, next) {
 
 app.use('/', routes);
 app.use('/users', users);
-app.get('/styleguide', function(req, res){
-  res.render('styleguide');
+app.get('/styleguide', function (req, res){
+  res.render('styleguide', { title: 'Smart Park Styleguide' });
 });
 
 
+app.get('/parking', function(req, res) {
+    var request = unirest.get('http://api.parkwhiz.com/p/denver-parking/?key=' + process.env.PARK)
+    .end(function (response) {
+      var parking = response.body.parking_listings;
+        res.json(parking);
+      })
+      // var locations = response.body.results.location_name;
+      // res.render('index', {books: NYTBooks});
+      // // console.log(response.body.results.books);
+      // res.render('index', { locations: parking });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

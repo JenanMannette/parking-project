@@ -1,0 +1,57 @@
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.nav a {
+  border: none;
+  background: black;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+
+.nav a:hover, input[type='button']:hover {
+  background-color: #005f5f;
+}
+
+//hard coded...oops
+input[type='button'] {
+  transition: .3s background-color;
+  background: black;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  width: 220px;
+  height: 50px;
+  border-left: 1px solid white;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  font-size: 20px;
+}
+
+.location-div {
+  width: 90%;
+  height: 500px;
+  padding: 10px;
+  margin: 20px auto;
+  border: 1px solid black;
+  background: rgba(46, 232, 23, 0.7);
+  display: none;
+}
+
+.favorites-div {
+  width: 90%;
+  height: 500px;
+  padding: 10px;
+  margin: 20px auto;
+  border: 1px solid black;
+  background: rgba(250, 248, 105, .7);
+  display: none;
+}

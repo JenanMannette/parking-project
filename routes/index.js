@@ -1,7 +1,9 @@
+require('dotenv').load();
+
 var express = require('express');
 var router = express.Router();
-
-/* GET home page. */
+var db = require('monk')(process.env.MONGOLAB_URI);
+var locations = db.get('locations');
 
 router.get('/', function(req, res, next) {
   if (req.user) {
@@ -12,9 +14,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/index', function(req, res, next) {
-  res.render('index', { title: 'SmartPark' });
+  res.render('index', { title: 'SmartPark' })
 });
-
 
 router.get('/logout', function (req, res, next) {
   req.session = null;

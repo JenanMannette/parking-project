@@ -17,3 +17,19 @@ body#bg {
   width: 50%;
   float: left;
 }
+
+
+@media screen and (min-width: 600px) {
+  .nav li, input[type="button"] {
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  /* Option 1 - Display Inline */
+  .nav li, input[type="button"] {
+    width: 220px;
+    display: inline-block;
+    margin-right: -10px;
+  }
+}

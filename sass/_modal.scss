@@ -1,0 +1,44 @@
+//box details
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+//makes box pop up
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
+
+//box design
+.modalDialog div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 15px;
+  border-radius: 10px;
+  background: $green;
+  border: 1px solid black;
+}
+
+.modalInfo {
+  border: 1px solid black;
+  margin-left: -10px;
+}
+
+//X design
+.close {
+  line-height: 25px;
+  position: absolute;
+  right: 15px;
+}
