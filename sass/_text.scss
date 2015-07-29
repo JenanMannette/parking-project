@@ -2,12 +2,12 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.45;
-  color: $red;
+  color: $black;
 }
 
 p {
   margin-bottom: 1.3em;
-  color: $red;
+  color: $black
 }
 
 .logout {
@@ -17,6 +17,7 @@ p {
 
 .uppercase {
   text-transform: uppercase;
+  color: $white;
 }
 
 .login {
@@ -40,7 +41,9 @@ h1 {
 
 h2 {font-size: 1.953em;}
 
-h3 {font-size: 1.563em;}
+h3 {font-size: 1.763em;
+  font-weight: bold;
+}
 
 h4 {font-size: 1.25em;}
 
@@ -60,12 +63,12 @@ thead {
 }
 
 tr:nth-of-type(even) {
-  background: rgba(000,000,000,0.3);
+  background: rgba($black,0.3);
 }
 
 blockquote {
   padding-left: 60px;
-  border-left: $red solid 20px;
+  border-left: $purple solid 20px;
   margin-bottom: 20px;
 }
 
@@ -74,12 +77,12 @@ nav a {
 	display: inline-block;
 /* 	margin: 15px 25px; */
 	outline: none;
-	color: #fff;
+	color: $darkGreen;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 400;
-	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	text-shadow: 0 0 1px rgba($white,0.3);
 	font-size: 1.35em;
 }
 
@@ -90,7 +93,7 @@ nav a:focus {
 
 .cl-effect-21 a {
 	padding: 10px;
-	color: $red;
+	color: $white;
 	font-weight: 700;
 	text-shadow: none;
 	-webkit-transition: color 0.3s;
@@ -104,7 +107,7 @@ nav a:focus {
 	left: 0;
 	width: 100%;
 	height: 2px;
-	background: #fff;
+	background: $white;
 	content: '';
 	opacity: 0;
 	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
@@ -131,7 +134,7 @@ nav a:focus {
 
 .cl-effect-21 a:hover,
 .cl-effect-21 a:focus {
-	color: #fff;
+	color: $white;
 }
 
 .cl-effect-21 a:hover::before,
@@ -145,12 +148,12 @@ nav a:focus {
 }
 
 a {
-  color: $red;
+  color: $darkGreen;
   text-decoration: none;
-  border-bottom: 2px solid $red;
+  border-bottom: 2px solid $black;
   transition: 300ms ease all;
 }
 
 a:hover {
-  border-bottom: 2px solid $green;
+  border-bottom: 2px solid $darkGreen;
 }

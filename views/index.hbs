@@ -7,7 +7,7 @@
       <ul>
         <li><input type="button" value="&laquo; Default Map" onclick="initialize()"></li>
         <li><a href="#zip">Change Location</a></li>
-        <li><a href="#filter">Filter</a></li>
+        <li><a href="#filter" id="foo">Filter</a></li>
         <li><a href="#" id="location-link" style="cursor: pointer;">Add a Location</a></li>
         <li><a href="#" id="favorites-link" style="cursor: pointer;">Favorites</a></li>
       </ul>
@@ -16,18 +16,10 @@
 
 {{/if}}
 
-//test
-<h1>Add a Location</h1>
-{{#locations}}
-{{name}}
-{{address}}
-{{price}}
-{{/locations}}
-
 <div class="location-div">
 
   <form class="" action="" method="post">
-    Name: <input type="text" name="name" placeholder="Name">
+    Name: <input type="text" name="name" placeholder="Name" width: "30px">
     Location: <input type="text" name="name" placeholder="Address">
     City: <input type="text" name="name" placeholder="City">
         State: <select>
@@ -90,7 +82,8 @@
 <div class="favorites-div">
   {{#if user}}
   <!-- //if favorites -->
-    display favorites
+    <p><b>STRETCH GOAL: Didn't complete</b></p>
+    display favorites<br>
     option to route to one
   {{else}}
     You haven't selected any favorites yet! To select a favorite click the ❤ symbol on the parking lot you want to save.
@@ -105,23 +98,24 @@
         Type in a city, state, zip code or address
         <div>
           <p>
-          <input id="address" type="textbox" placeholder="Enter Information Here" value="">
+          <input id="address" type="textbox" placeholder="Search Information Here" value="">
           </p>
-          <input type="button" value="Submit" onclick="codeAddress()">
+          <input type="button" class="submit" value="Submit" onclick="codeAddress()">
         </div>
       </form>
   </div>
 </div>
 
 <div id="filter" class="modalDialog">
-	<div>
-		<a href="#close" title="Close" class="close">X</a>
-		<h2>Filter</h2>
-      <form method="get" id="chooseZip">
-          <input id="textZip" type="text" name="zip" placeholder="Filter" autofocus>
-          <button type="submit" class="learnButton">Search</button>
-        </div>
+  <div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Filter by Price</h2>
+      $ <input type="text" name="name" id="price" placeholder="Enter a price">
+          <p>
+            <input type="button" class="submit" value="Filter" id="submitPrice">
+          </p>
+        <!-- </div>
         <div class="clear"></div>
-      </form>
+      </form> -->
 	</div>
 </div>

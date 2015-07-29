@@ -1,35 +1,43 @@
+.nav {
+  margin-top: 2px;
+}
+
 .nav ul {
   list-style: none;
-  background-color: #444;
+  background-color: $grey;
   text-align: center;
   padding: 0;
   margin: 0;
+  border: 2px solid $black;
 }
 
 .nav a {
-  border: none;
-  background: black;
-  border-right: 1px solid white;
-  border-left: 1px solid white;
-  color: #fff;
+  background: $black;
+  border-right: 1px solid $white;
+  border-left: 1px solid $white;
+  color: $white;
   display: block;
   transition: .3s background-color;
 }
 
 .nav a:hover, input[type='button']:hover {
-  background-color: #005f5f;
+  background-color: $darkGreen;
+}
+
+.nav a:hover {
+  border-bottom: 2px solid $black;
 }
 
 //hard coded...oops
 input[type='button'] {
-  transition: .3s background-color;
-  background: black;
   border: none;
-  color: white;
+  transition: .3s background-color;
+  background: $black;
+  color: $white;
   text-transform: uppercase;
   width: 220px;
   height: 50px;
-  border-left: 1px solid white;
+  border-left: 1px solid $white;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.45;
@@ -41,8 +49,8 @@ input[type='button'] {
   height: 500px;
   padding: 10px;
   margin: 20px auto;
-  border: 1px solid black;
-  background: rgba(46, 232, 23, 0.7);
+  border: 1px solid $black;
+  background: rgba($purple, 0.7);
   display: none;
 }
 
@@ -51,7 +59,7 @@ input[type='button'] {
   height: 500px;
   padding: 10px;
   margin: 20px auto;
-  border: 1px solid black;
-  background: rgba(250, 248, 105, .7);
+  border: 1px solid $black;
+  background: rgba($purple, .7);
   display: none;
 }

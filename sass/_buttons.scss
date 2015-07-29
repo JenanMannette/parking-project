@@ -1,7 +1,11 @@
-nput[type='submit'], button {
-  border: 1px solid $red;
-  color: $red;
+button {
+  border: 1px solid $black;
+  color: $black;
   border-radius: 3px;
-  padding: 20px;
-  background: white;
+  padding: 10px;
+  background: $white;
+}
+
+input.submit {
+  border: 1px solid $black;
 }

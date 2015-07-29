@@ -5,7 +5,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba($black,0.5);
   z-index: 99999;
   opacity:0;
   -webkit-transition: opacity 400ms ease-in;
@@ -27,12 +27,12 @@
   margin: 10% auto;
   padding: 15px;
   border-radius: 10px;
-  background: $green;
-  border: 1px solid black;
+  background: $grey;
+  border: 1px solid $black;
 }
 
 .modalInfo {
-  border: 1px solid black;
+  border: 1px solid $black;
   margin-left: -10px;
 }
 

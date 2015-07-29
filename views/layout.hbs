@@ -9,9 +9,6 @@
       src="https://maps.googleapis.com/maps/api/js?key=" + process.env.GMKEY>
     </script>
 
-    <script src="/javascripts/map.js"></script>
-    <script src="/javascripts/main.js"></script>
-
   <title>{{title}}</title>
   </head>
 
@@ -24,7 +21,9 @@
           </p>
           <a href="/logout" class="logout">Logout</a>
           {{else}}
-          Welcome to {{title}}
+          <p class="uppercase">
+            Welcome to {{title}}
+          </p>
           <p class="login">
             <a href="/auth/google">Login with Google</a>
           </p>
@@ -35,6 +34,9 @@
     <main class="main">
       {{{body}}}
     </main>
+
+    <script src="/javascripts/map.js"></script>
+    <script src="/javascripts/main.js"></script>
   </body>
 
 </html>

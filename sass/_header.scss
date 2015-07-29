@@ -4,13 +4,13 @@
 }
 
 .main-nav {
-  border: 2px solid black;
+  border: 2px solid $black;
   width: 100%;
   padding: 20px;
-  background-color: rgba(5,5,5,.5);
+  background-color: rgba($black,.7);
   position: fixed;
   a {
-    color: $red;
+    color: $blue;
     border-bottom: none;
   }
 }
