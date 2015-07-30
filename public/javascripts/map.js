@@ -7,11 +7,27 @@ Orbit.prototype.get = function (path, fn) {
   req.addEventListener('load', fn.bind(req))
 }
 
+
+//ADD MARKER
+function placeMarker(location) {
+  var marker = new google.maps.Marker({
+      icon: '/images/parkingicon.png',
+      position: location,
+      map: map,
+  });
+}
+
+function newPark (input) {
+
+}
+
+
+//MAP GUTS
 function initialize(num) {
   if (isNaN(num)) {
-    num = 50;
+    num = 50; //default
   } else {
-    num = num; //default
+    num = num;
   }
 
   var parking = new Orbit();
@@ -20,7 +36,7 @@ function initialize(num) {
 
     var results = [];
     for (var i = 0; i < parkingInfo.length; i++) {
-      if (parkingInfo[i].price < num ) {
+      if (parkingInfo[i].price <= num ) {
         results.push(parkingInfo[i])
       }
     }
@@ -58,8 +74,6 @@ function initialize(num) {
         '</div>' +
       '</div>';
 
-      // array.push(object);
-
       (function() {
         var infoWindow =  new google.maps.InfoWindow({
           content: object.content,
@@ -74,11 +88,18 @@ function initialize(num) {
         // });
       })();
 
+//ADD LOCATION
+      google.maps.event.addListener(map, 'rightclick', function(event) {
+         placeMarker(event.latLng);
+         newPark();
+      });
+
     } //end of for loop
   }) // closing ajax
 
+  // DEFAULT MAP INFO
   geocoder = new google.maps.Geocoder();
-  var latlng = new google.maps.LatLng(39.745549, -104.991263);
+  var latlng = new google.maps.LatLng(39.748356, -104.995477);
   var mapOptions = {
     scrollwheel: false,
     draggable: true,
@@ -111,31 +132,37 @@ function initialize(num) {
   ];
 
   map.setOptions({styles: styles});
+
 } //closes initialize function
 
-
+//SEARCH
 function codeAddress () {
-  var address = document.getElementById("address").value;
+  var address = document.getElementById("address");
   var modal = document.getElementById("zip");
-  geocoder.geocode( { 'address': address}, function(results, status) {
+  geocoder.geocode( { 'address': address.value}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);
       var marker = new google.maps.Marker({
           map: map,
           position: results[0].geometry.location
       });
+      address.value = '';
     } else {
       alert("Geocode was not successful for the following reason: " + status);
     }
   });
 }
 
+//FILTER
 var submit = document.getElementById('submitPrice');
 
 submit.addEventListener('click', function () {
   var input = document.getElementById('price');
   var inputNum = input.value;
   initialize(inputNum);
+  input.value = '';
 })
+
+
 
 google.maps.event.addDomListener(window, 'load', initialize);

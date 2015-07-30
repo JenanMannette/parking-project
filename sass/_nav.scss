@@ -20,7 +20,7 @@
   transition: .3s background-color;
 }
 
-.nav a:hover, input[type='button']:hover {
+.nav a:hover, input[type='button']:hover, input[type='submit']:hover {
   background-color: $darkGreen;
 }
 
@@ -29,7 +29,7 @@
 }
 
 //hard coded...oops
-input[type='button'] {
+input[type='submit'], input[type='button'] {
   border: none;
   transition: .3s background-color;
   background: $black;

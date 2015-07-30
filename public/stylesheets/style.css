@@ -61,7 +61,7 @@ body#bg {
   width: 50%;
   float: left; }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   .nav li, input[type="button"] {
     width: 120px;
     height: 50px;
@@ -105,13 +105,13 @@ body#bg {
   display: block;
   transition: .3s background-color; }
 
-.nav a:hover, input[type='button']:hover {
+.nav a:hover, input[type='button']:hover, input[type='submit']:hover {
   background-color: #56A081; }
 
 .nav a:hover {
   border-bottom: 2px solid #555B6E; }
 
-input[type='button'] {
+input[type='submit'], input[type='button'] {
   border: none;
   transition: .3s background-color;
   background: #555B6E;
@@ -323,7 +323,7 @@ input.submit {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(85, 91, 110, 0.6);
+  background: rgba(85, 91, 110, 0.5);
   z-index: 99999;
   opacity: 0;
   -webkit-transition: opacity 400ms ease-in;

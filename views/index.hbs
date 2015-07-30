@@ -16,106 +16,63 @@
 
 {{/if}}
 
-<div class="location-div">
 
-  <form class="" action="" method="post">
-    Name: <input type="text" name="name" placeholder="Name" width: "30px">
-    Location: <input type="text" name="name" placeholder="Address">
-    City: <input type="text" name="name" placeholder="City">
-        State: <select>
-    	<option value="AL">Alabama</option>
-    	<option value="AK">Alaska</option>
-    	<option value="AZ">Arizona</option>
-    	<option value="AR">Arkansas</option>
-    	<option value="CA">California</option>
-    	<option value="CO">Colorado</option>
-    	<option value="CT">Connecticut</option>
-    	<option value="DE">Delaware</option>
-    	<option value="DC">District Of Columbia</option>
-    	<option value="FL">Florida</option>
-    	<option value="GA">Georgia</option>
-    	<option value="HI">Hawaii</option>
-    	<option value="ID">Idaho</option>
-    	<option value="IL">Illinois</option>
-    	<option value="IN">Indiana</option>
-    	<option value="IA">Iowa</option>
-    	<option value="KS">Kansas</option>
-    	<option value="KY">Kentucky</option>
-    	<option value="LA">Louisiana</option>
-    	<option value="ME">Maine</option>
-    	<option value="MD">Maryland</option>
-    	<option value="MA">Massachusetts</option>
-    	<option value="MI">Michigan</option>
-    	<option value="MN">Minnesota</option>
-    	<option value="MS">Mississippi</option>
-    	<option value="MO">Missouri</option>
-    	<option value="MT">Montana</option>
-    	<option value="NE">Nebraska</option>
-    	<option value="NV">Nevada</option>
-    	<option value="NH">New Hampshire</option>
-    	<option value="NJ">New Jersey</option>
-    	<option value="NM">New Mexico</option>
-    	<option value="NY">New York</option>
-    	<option value="NC">North Carolina</option>
-    	<option value="ND">North Dakota</option>
-    	<option value="OH">Ohio</option>
-    	<option value="OK">Oklahoma</option>
-    	<option value="OR">Oregon</option>
-    	<option value="PA">Pennsylvania</option>
-    	<option value="RI">Rhode Island</option>
-    	<option value="SC">South Carolina</option>
-    	<option value="SD">South Dakota</option>
-    	<option value="TN">Tennessee</option>
-    	<option value="TX">Texas</option>
-    	<option value="UT">Utah</option>
-    	<option value="VT">Vermont</option>
-    	<option value="VA">Virginia</option>
-    	<option value="WA">Washington</option>
-    	<option value="WV">West Virginia</option>
-    	<option value="WI">Wisconsin</option>
-    	<option value="WY">Wyoming</option>
-    </select>
-    Zip: <input type="text" name="name" placeholder="Zip">
-  </form>
-</div>
-
-<div class="favorites-div">
-  {{#if user}}
-  <!-- //if favorites -->
-    <p><b>STRETCH GOAL: Didn't complete</b></p>
-    display favorites<br>
-    option to route to one
-  {{else}}
-    You haven't selected any favorites yet! To select a favorite click the ❤ symbol on the parking lot you want to save.
-  {{/if}}
-</div>
-
+<!-- SEARCH -->
 <div id="zip" class="modalDialog">
 	<div>
 		<a href="#close" title="Close" class="close">X</a>
 		<h2>Enter an Address</h2>
       <form method="get" id="chooseAddress">
         Type in a city, state, zip code or address
-        <div>
           <p>
-          <input id="address" type="textbox" placeholder="Search Information Here" value="">
+          <input id="address" type="text" placeholder="Location Here">
           </p>
-          <input type="button" class="submit" value="Submit" onclick="codeAddress()">
-        </div>
+          <input type="submit" class="submit" value="Submit" onclick="codeAddress()">
       </form>
   </div>
 </div>
 
+<!-- FILTER -->
 <div id="filter" class="modalDialog">
   <div>
     <a href="#close" title="Close" class="close">X</a>
     <h2>Filter by Price</h2>
-      $ <input type="text" name="name" id="price" placeholder="Enter a price">
-          <p>
-            <input type="button" class="submit" value="Filter" id="submitPrice">
-          </p>
-        <!-- </div>
-        <div class="clear"></div>
-      </form> -->
+    <form method="get">
+      $ <input type="textbox" name="name" id="price" placeholder="Enter a price">
+      </p>
+        <input type="submit" class="submit" value="Filter" id="submitPrice">
+      </p>
+    </form>
 	</div>
+</div>
+
+<!-- ADD LOCATION -->
+<div class="location-div">
+  <p>
+    <u>STRETCH GOAL: Didn't complete</u>
+  </p>
+  Add form here :)
+</div>
+
+
+<!-- FAVORITES -->
+<div class="favorites-div">
+  {{#if favorites}}
+  <!-- //if favorites -->
+    <p><b>STRETCH GOAL: Didn't complete</b></p>
+    display favorites<br>
+    option to route to one
+  {{else}}
+    <p>
+      <u>STRETCH GOAL: Didn't complete</u>
+    </p>
+
+    <p>
+      Display favorites with route option
+    </p>
+
+    <p>
+    You haven't selected any favorites yet! To select a favorite click the ♥ symbol on the parking lot you want to save.
+    <p>
+  {{/if}}
 </div>
