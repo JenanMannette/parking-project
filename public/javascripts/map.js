@@ -146,7 +146,7 @@ function codeAddress () {
           map: map,
           position: results[0].geometry.location
       });
-      address.value = '';
+      // address.value = '';
     } else {
       alert("Geocode was not successful for the following reason: " + status);
     }
@@ -160,7 +160,7 @@ submit.addEventListener('click', function () {
   var input = document.getElementById('price');
   var inputNum = input.value;
   initialize(inputNum);
-  input.value = '';
+  // input.value = '';
 })
 
 
