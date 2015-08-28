@@ -1,24 +1,20 @@
-var Orbit = function () {}
+var Orbit = function () {};
 
 Orbit.prototype.get = function (path, fn) {
-  var req = new XMLHttpRequest()
-  req.open('GET', path)
-  req.send()
+  var req = new XMLHttpRequest();
+  req.open('GET', path);
+  req.send();
   req.addEventListener('load', fn.bind(req))
-}
+};
 
 
-//ADD MARKER
+////ADD MARKER
 function placeMarker(location) {
   var marker = new google.maps.Marker({
       icon: '/images/parkingicon.png',
       position: location,
       map: map,
   });
-}
-
-function newPark (input) {
-
 }
 
 
@@ -41,42 +37,40 @@ function initialize(num) {
       }
     }
 
-    var array = [];
-
     for(var i = 0; i < results.length; i++) {
-      var object = {};
+      var data = {};
       var latlng = new google.maps.LatLng(results[i].lat, results[i].lng);
 
       var marker = new google.maps.Marker({
         position: latlng,
         map: map,
         icon: '/images/parkingicon.png'
-      })
+      });
 
-      object.name = results[i].location_name;
-      object.street = results[i].address;
-      object.city = results[i].city;
-      object.state = results[i].state;
-      object.zip = results[i].zip;
-      object.price = results[i].price_formatted;
-      object.likes = results[i].recommendations;
-      object.content =
+      data.name = results[i].location_name;
+      data.street = results[i].address;
+      data.city = results[i].city;
+      data.state = results[i].state;
+      data.zip = results[i].zip;
+      data.price = results[i].price_formatted;
+      data.likes = results[i].recommendations;
+      data.content =
       '<div id="content">' +
         '<div id="siteNotice">' +
         '</div>' +
-        '<h1 id="firstHeading" class="firstHeading">' + object.name + '</h1>' +
+        '<h1 id="firstHeading" class="firstHeading">' + data.name + '</h1>' +
         '<div id="bodyContent">' +
-          '<h3>' + object.price + '</h3>' +
-          '<br>' + object.street + '</br>' +
-          '<br>' + object.city + '</br>' +
-          '<br>' + object.state + ', ' + object.zip + '</br>' +
-          '<hr><div id="heart"> ♥ ' + object.likes + ' likes</div>' +
+          '<h3>' + data.price + '</h3>' +
+          '<br>' + data.street + '</br>' +
+          '<br>' + data.city + '</br>' +
+          '<br>' + data.state + ', ' + data.zip + '</br>' +
+          '<hr><div id="heart"> ♥ ' + data.likes + ' likes</div>' +
         '</div>' +
       '</div>';
 
       (function() {
         var infoWindow =  new google.maps.InfoWindow({
-          content: object.content,
+          content: data.content,
           position: latlng
         });
         google.maps.event.addListener(marker, 'click', function () {
@@ -112,7 +106,6 @@ function initialize(num) {
   var styles = [
     {
       stylers: [
-        // { hue: "#FF7B00" },
         { saturation: -10 }
       ]
     },{
@@ -161,7 +154,7 @@ submit.addEventListener('click', function () {
   var inputNum = input.value;
   initialize(inputNum);
   input.value = '';
-})
+});
 
 
 

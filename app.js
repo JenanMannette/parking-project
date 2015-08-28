@@ -52,13 +52,7 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.HOST + "/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    // asynchronous verification, for effect...
     process.nextTick(function () {
-
-      // To keep the example simple, the user's Google profile is returned to
-      // represent the logged-in user.  In a typical application, you would want
-      // to associate the Google account with a user record in your database,
-      // and return that user instead.
       return done(null, profile);
     });
   }
@@ -102,10 +96,6 @@ app.get('/parking', function(req, res) {
       var parking = response.body.parking_listings;
         res.json(parking);
       })
-      // var locations = response.body.results.location_name;
-      // res.render('index', {books: NYTBooks});
-      // // console.log(response.body.results.books);
-      // res.render('index', { locations: parking });
 });
 
 // catch 404 and forward to error handler
